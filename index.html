@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="player-inputs">
+        <input type="text" id="playerX" placeholder="Enter Player 1's name">
+        <input type="text" id="playerO" placeholder="Enter Player 2's name">
+    </div>
+    <div class="symbol-selection">
+        <button onclick="chooseSymbol('X')">Player 1: X</button>
+        <button onclick="chooseSymbol('O')">Player 1: O</button>
+    </div>
+    <div id="board" class="board" style="display: none;">
+        <div class="cell" onclick="cellClicked(0)"></div>
+        <div class="cell" onclick="cellClicked(1)"></div>
+        <div class="cell" onclick="cellClicked(2)"></div>
+        <div class="cell" onclick="cellClicked(3)"></div>
+        <div class="cell" onclick="cellClicked(4)"></div>
+        <div class="cell" onclick="cellClicked(5)"></div>
+        <div class="cell" onclick="cellClicked(6)"></div>
+        <div class="cell" onclick="cellClicked(7)"></div>
+        <div class="cell" onclick="cellClicked(8)"></div>
+    </div>
+    <div id="winner" class="winner"></div>
+    <div class="win-counts">
+        <div id="player1Wins">Player 1 Wins: 0</div>
+        <div id="player2Wins">Player 2 Wins: 0</div>
+    </div>
+    <button id="winnerButton" onclick="showWinner()" class="winner-button">Show Winner</button>
+    <button id="resetButton" onclick="resetGame()" class="reset-button" style="display: none;">Reset</button>
+    <script src="script.js"></script>
+</body>
+</html>

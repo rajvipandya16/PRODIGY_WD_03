@@ -1,0 +1,125 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(68.8deg, rgba(0, 0, 0, 0.95) 1.8%, rgb(0, 55, 79) 31.8%, rgb(9, 93, 134) 56.2%, rgb(15, 155, 217) 89%);
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.player-inputs {
+    margin-bottom: 20px;
+}
+
+.player-inputs input {
+    padding: 10px;
+    margin: 5px;
+    font-size: 1em;
+}
+
+.symbol-selection {
+    margin-bottom: 20px;
+}
+
+.symbol-selection button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.cell.X {
+    color: rgb(137, 106, 106);
+}
+
+.cell.O {
+    color: green;
+}
+
+.winner {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+.winner-button {
+    display: none;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 2em;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: none;
+    outline: none;
+}
+
+.reset-button {
+    display: none;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.win-counts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: white;
+}
+
+
+@media (max-width: 600px) {
+    .board {
+        grid-template-columns: repeat(3, 70px);
+    }
+
+    .cell {
+        width: 70px;
+        height: 70px;
+        font-size: 1.5em;
+    }
+
+    .player-inputs input, .symbol-selection button {
+        padding: 5px;
+        margin: 3px;
+        font-size: 0.8em;
+    }
+
+    .winner {
+        font-size: 1.2em;
+    }
+
+    .winner-button, .reset-button {
+        font-size: 1.5em;
+    }
+
+    .win-counts {
+        font-size: 1em;
+    }
+}

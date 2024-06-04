@@ -3,36 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe</title>
+    <title>Tic Tac Toe Game</title>
+    <link rel="website icon" href="tic_tac_toe_logo.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="player-inputs">
-        <input type="text" id="playerX" placeholder="Enter Player 1's name">
-        <input type="text" id="playerO" placeholder="Enter Player 2's name">
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="tic_tac_toe_logo.png" alt="Tic Tac Toe Logo">
+            </div>
+            <h1>Tic Tac Toe (XO) game</h1>
+        </div>
+        <div class="name-input-container">
+            <label for="player1Name">Player 1: </label>
+            <input type="text" id="player1Name" placeholder="Player 1">
+            <label for="player2Name">Player 2: </label>
+            <input type="text" id="player2Name" placeholder="Player 2">
+            <button id="startButton" class="bottom-button">Start Game</button>
+        </div>
+        <div class="mode-selection">
+            <button id="pvpButton" class="bottom-button">Player vs Player</button>
+            <button id="pvaiButton" class="bottom-button">Player vs AI</button>
+        </div>
+        <div class="game-info-container">
+            <div class="game-board" id="gameBoard">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+            <div class="info-and-buttons">
+                <div class="info">
+                    <p>Player 1: <span id="player1NameDisplay"></span></p>
+                    <p>Player 2: <span id="player2NameDisplay"></span></p>
+                </div>
+                <div class="buttons">
+                    <button id="resetButton" class="bottom-button">Reset</button>
+                    <button id="aboutButton" class="bottom-button">About</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="aboutModal">
+            <div class="modal-content">
+                <span class="close-button" id="closeButton">&times;</span>
+                <h2>How to Play</h2>
+                <p>1. The game is played on a grid that's 3 squares by 3 squares.</p>
+                <p>2. Players take turns putting their marks in empty squares.</p>
+                <p>3. The first player to get 3 of their marks in a row (up, down, across, or diagonally) is the winner.</p>
+                <p>4. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a draw.</p>
+            </div>
+        </div>
     </div>
-    <div class="symbol-selection">
-        <button onclick="chooseSymbol('X')">Player 1: X</button>
-        <button onclick="chooseSymbol('O')">Player 1: O</button>
-    </div>
-    <div id="board" class="board" style="display: none;">
-        <div class="cell" onclick="cellClicked(0)"></div>
-        <div class="cell" onclick="cellClicked(1)"></div>
-        <div class="cell" onclick="cellClicked(2)"></div>
-        <div class="cell" onclick="cellClicked(3)"></div>
-        <div class="cell" onclick="cellClicked(4)"></div>
-        <div class="cell" onclick="cellClicked(5)"></div>
-        <div class="cell" onclick="cellClicked(6)"></div>
-        <div class="cell" onclick="cellClicked(7)"></div>
-        <div class="cell" onclick="cellClicked(8)"></div>
-    </div>
-    <div id="winner" class="winner"></div>
-    <div class="win-counts">
-        <div id="player1Wins">Player 1 Wins: 0</div>
-        <div id="player2Wins">Player 2 Wins: 0</div>
-    </div>
-    <button id="winnerButton" onclick="showWinner()" class="winner-button">Show Winner</button>
-    <button id="resetButton" onclick="resetGame()" class="reset-button" style="display: none;">Reset</button>
     <script src="script.js"></script>
 </body>
 </html>
